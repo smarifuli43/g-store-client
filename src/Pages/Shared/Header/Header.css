@@ -1,0 +1,9 @@
+.active {
+  color: #2916aa;
+  font-weight: 800;
+}
+a{
+  text-decoration: none;
+  color: #000000;
+  transition: all .2s ease;
+}

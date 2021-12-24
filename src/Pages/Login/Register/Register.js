@@ -14,6 +14,7 @@ const Register = () => {
     createNewUser,
     signInWithGoogle,
     error,
+ 
   } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => handleCreateNewUser(data);
@@ -49,9 +50,6 @@ const Register = () => {
 
   const googleSignIn = () => {
     signInWithGoogle();
-  };
-  const facebookSignIn = () => {
-    signInWithFacebook();
   };
 
   return (
@@ -94,7 +92,7 @@ const Register = () => {
                 {...register('password')}
               />
 
-              <button type='submit' className='btn-luxury w-100'>
+              <button type='submit' className='btn-store w-100'>
                 Create an account
               </button>
             </form>
@@ -129,6 +127,7 @@ const Register = () => {
               <img src={googleLogo} alt='' style={{ width: '28px' }} />
               <span className='pe-1 pe-md-5'>Continue with Google</span>
             </button>
+       
           </div>
         </div>
       </div>

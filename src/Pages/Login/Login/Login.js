@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import Header from '../../Shared/Header/Header';
 import { useForm } from 'react-hook-form';
 import googleLogo from '../../../img/google-color.svg';
-import useAuth from '../../../Hooks/useAuth';
 import PasswordReset from '../Reset/PasswordReset/PasswordReset';
 import { Alert } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router';
+import useAuth from '../../../Hooks/useAuth';
 
 
 const Login = () => {
-  const { signinWithEmailandPass, signInWithGoogle} =
+  const { signinWithEmailandPass, signInWithGoogle } =
     useAuth();
   const navigate = useNavigate()
   const location = useLocation();
@@ -29,9 +29,6 @@ const Login = () => {
     signInWithGoogle( navigate, location);
   };
 
-  const facebookSignIn = () => {
-    signInWithFacebook(navigate, location);
-  };
 
   return (
     <>
@@ -77,7 +74,7 @@ const Login = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
               ></PasswordReset>
-              <button type='submit' className='btn-luxury w-100'>
+              <button type='submit' className='btn-store w-100'>
                 Login
               </button>
             </form>
@@ -113,6 +110,7 @@ const Login = () => {
               <img src={googleLogo} alt='' style={{ width: '28px' }} />
               <span className='pe-1 pe-md-5'>Continue with Google</span>
             </button>
+           
           </div>
         </div>
       </div>
