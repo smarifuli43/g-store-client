@@ -21,13 +21,17 @@ const Product = (props) => {
           ) : (
             <p className='text-danger'>out of stock</p>
           )}
+        </Card.Body>
+        <Card.Footer className='bg-white border-0'>
           <div className='d-flex align-items-center justify-content-between'>
-            <h6>${price}/{ weight} Kg</h6>
+            <h6>
+              ${price}/{weight} Kg
+            </h6>
             <button className='cart-btn'>
-              <i class='fas fa-cart-plus'></i> Add
+              <i className='fas fa-cart-plus'></i> Add
             </button>
           </div>
-        </Card.Body>
+        </Card.Footer>
       </Card>
     </div>
   );

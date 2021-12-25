@@ -107,7 +107,7 @@ const Dashboard = () => {
                   Order list
                 </NavLink>
                 <NavLink
-                  to='/dashboard/addservice'
+                  to='/dashboard/addproduct'
                   className={({ isActive }) =>
                     isActive ? 'active-dash mt-3' : 'mt-3  text-secondary'
                   }
@@ -116,7 +116,7 @@ const Dashboard = () => {
                   <span>
                     <i className='fas fa-plus me-2'></i>
                   </span>
-                  Add Service
+                  Add Product
                 </NavLink>
                 <NavLink
                   to='/dashboard/makeadmin'
