@@ -1,0 +1,26 @@
+.cart-btn{
+  background-color: #c3f5d69a;
+  padding: 6px 15px;
+  border-radius: 5px;
+  color: #09a043;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  transition: all .3s ease;
+}
+.cart-btn:hover {
+  color: #ffffff;
+  background-color: #09a043;
+}
+.card{
+  border-radius: 5px;
+  transition: all .3s ease;
+  border: 1px solid #d4d4d479;
+}
+.card:hover{
+  border: 1px solid #1dcc6062;
+  box-shadow: 0 2px 80px 0 rgba(0, 0, 0, 0.1);
+}
+.product-name:hover{
+color: #09a043;
+}
