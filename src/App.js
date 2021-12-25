@@ -11,6 +11,7 @@ import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
 import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin/MakeAdmin';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
+import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
             <Route
+              path='products/:id'
+              element={<ProductDetails />}
+            />
+            <Route
               path='dashboard'
               element={
                 <PrivateRoute>
@@ -32,8 +37,7 @@ function App() {
             >
               <Route path={'/dashboard'} element={<DashboardHome />}></Route>
               <Route path='makeadmin' element={<MakeAdmin />}></Route>
-              <Route path='addproduct' element={<AddProduct/>}></Route>
-          
+              <Route path='addproduct' element={<AddProduct />}></Route>
             </Route>
             <Route path='*' element={<NotFound />} />
           </Routes>

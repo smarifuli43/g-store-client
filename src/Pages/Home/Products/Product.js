@@ -4,15 +4,18 @@ import { Link } from 'react-router-dom';
 import './Products.css';
 
 const Product = (props) => {
-  const { name, img, price, countStock, weight } = props.product;
+  const { name, img, price, countStock, weight ,_id} = props.product;
  
   return (
     <div>
       <Card className='h-100 card '>
-        <Card.Img variant='top' src={img} />
+        <Link to={`/products/${_id}`} className='product-name'>
+         <Card.Img variant='top' src={img} />
+        </Link>
+
         <Card.Body>
           <Card.Title className='mb-0'>
-            <Link to='/' className='product-name'>
+            <Link to={`/products/${_id}`} className='product-name'>
               {name}
             </Link>
           </Card.Title>

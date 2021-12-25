@@ -22,10 +22,17 @@ const Header = () => {
               />
             </Link>
           </Navbar.Brand>
+          <button className='ms-auto ms-lg-5 border-0 bg-transparent position-relative me-4'>
+            <i className='fas fa-shopping-cart fs-3'></i>{' '}
+            <span className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'>
+              9 <span className='visually-hidden'>cart item</span>
+            </span>
+          </button>
           <Navbar.Toggle
             aria-controls='responsive-navbar-nav'
-            className='border-0'
+            className='border-0 ms-auto'
           />
+
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='ms-auto d-flex align-items-start align-items-lg-center '>
               <NavLink
