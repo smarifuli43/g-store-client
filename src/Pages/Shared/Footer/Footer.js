@@ -1,11 +1,13 @@
 import React from 'react';
+import logo from '../../../img/logo.png'
 
 const Footer = () => {
   return (
-    <div style={{ background: '#251D58' }}>
+    <div style={{ background: '#222222' }}>
       <div className='container py-5'>
         <div className='row '>
           <div className='col-12 col-md-6 col-lg-5 text-white'>
+            <img src={logo} alt="" width='250px'  className='mb-3'/>
             <p>
               <i className='fas fa-map-marker-alt me-3 fs-5'></i>
               H#000 (0th Floor), Road #00, New DOHS, Mohakhali, Dhaka,
@@ -52,7 +54,7 @@ const Footer = () => {
                 <ul className='list-unstyled '>
                   <li>
                     <a className='text-white-50' href='/'>
-                      Rentals
+                      Dashboard
                     </a>
                   </li>
                   <li>

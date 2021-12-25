@@ -53,15 +53,8 @@ const Header = () => {
               >
                 Contact
               </NavLink>
-              <NavLink
-                to='/project'
-                className={({ isActive }) =>
-                  isActive ? 'active' : 'ms-lg-4  mt-4 mt-lg-0'
-                }
-              >
-                Projects
-              </NavLink>
-              {(
+
+              {
                 <NavLink
                   to='/dashboard'
                   className={({ isActive }) =>
@@ -70,18 +63,18 @@ const Header = () => {
                 >
                   Dashboard
                 </NavLink>
-              )}
+              }
               {user?.email ? (
                 <div>
                   <button
-                    className='btn-luxury ms-lg-4 my-4 my-lg-0'
+                    className='btn-store ms-lg-4 my-4 my-lg-0'
                     onClick={() => logout(navigate)}
                   >
                     Logout
                   </button>
                 </div>
               ) : (
-                <Link className='btn-luxury ms-lg-4 my-4 my-lg-0' to='/login'>
+                <Link className='btn-store ms-lg-4 my-4 my-lg-0' to='/login'>
                   Login
                 </Link>
               )}

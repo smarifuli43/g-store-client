@@ -1,0 +1,26 @@
+.carousel {
+  height: fit-content;
+  max-height: 900px;
+  max-width: 2600px;
+  margin: auto;
+}
+.carousel-item {
+  min-height: 600px;
+  width: 100%;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position:center top ;
+  padding: 200px 30px;
+
+}
+
+.carousel-item:nth-child(1) {
+  background: url('../../../img/slider1.png');
+
+}
+.carousel-item:nth-child(2) {
+  background: url('../../../img/slider2.png');
+}
+.carousel-item:nth-child(3) {
+  background: url('../../../img/slider3.png');
+}

@@ -36,9 +36,9 @@ const Login = () => {
       <div className='container my-5'>
         <div className='row d-flex justify-content-center '>
           <div
-            className='col-10 col-md-8 col-lg-5 data-form'
+            className='col-10 col-md-8 col-lg-5 data-form box-shadow border '
             style={{
-              border: '1px solid #ABABAB',
+             
               borderRadius: '4px',
               padding: '30px 50px',
             }}
@@ -93,25 +93,23 @@ const Login = () => {
                 {error}
               </Alert>
             )}
-          </div>
-        </div>
-        <div className='row d-flex justify-content-center px-md-5'>
-          <div className='col-10 col-md-8 col-lg-5 text-center'>
-            <div className=' d-flex justify-content-center my-3 mx-2 align-items-center'>
-              <span className='hl'></span>
-              <h5>Or</h5>
-              <span className='hl'></span>
+            
+                <div className=' d-flex justify-content-center mt-5 mx-2 align-items-center'>
+                  <span className='hl'></span>
+                  <h5>Or</h5>
+                  <span className='hl'></span>
+                </div>
+                <button
+                  className='d-flex justify-content-between bg-transparent rounded-pill p-2 w-100 mt-3'
+                  style={{ border: '1px solid #C7C7C7' }}
+                  onClick={googleSignIn}
+                >
+                  <img src={googleLogo} alt='' style={{ width: '28px' }} />
+                  <span className='pe-1 pe-md-5'>Continue with Google</span>
+                </button>
+              
             </div>
-            <button
-              className='d-flex justify-content-between bg-transparent rounded-pill p-2 w-100'
-              style={{ border: '1px solid #C7C7C7' }}
-              onClick={googleSignIn}
-            >
-              <img src={googleLogo} alt='' style={{ width: '28px' }} />
-              <span className='pe-1 pe-md-5'>Continue with Google</span>
-            </button>
-           
-          </div>
+     
         </div>
       </div>
     </>

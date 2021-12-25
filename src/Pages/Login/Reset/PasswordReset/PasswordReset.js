@@ -41,7 +41,7 @@ const PasswordReset = (props) => {
               className='mb-3 py-2'
               onBlur={handleEmailChange}
             />
-            <Button className='btn-luxury py-2' onClick={resetPassword}>
+            <Button className='btn-store py-2' onClick={resetPassword}>
               Reset Password
             </Button>
           </Modal.Body>

@@ -5,9 +5,13 @@ import AuthProvider from './Context/AuthProvider';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import NotFound from './Pages/NotFound/NotFound';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
+import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin/MakeAdmin';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
-  console.log(AuthProvider)
   return (
     <div className='App'>
       <AuthProvider>
@@ -17,8 +21,19 @@ function App() {
             <Route path='home' element={<Home />} />
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
-            
-            {/* <Route path='*' element={<NotFound />} /> */}
+            <Route
+              path='dashboard'
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            >
+              <Route path={'/dashboard'} element={<DashboardHome />}></Route>
+              <Route path='makeadmin' element={<MakeAdmin />}></Route>
+          
+            </Route>
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </Router>
       </AuthProvider>

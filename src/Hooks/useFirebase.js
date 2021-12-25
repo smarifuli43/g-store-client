@@ -19,11 +19,10 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [success, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
+  const [admin, setAdmin] = useState(false);
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
-
 
   // register
   const createNewUser = (email, password, name, navigate) => {
@@ -32,7 +31,7 @@ const useFirebase = () => {
         setError('');
         setUser(result.user);
         setUserName(name);
-       
+        saveUser(email, name, 'POST');
         navigate('/home');
       })
       .catch((error) => {
@@ -76,7 +75,7 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-
+        saveUser(user.email, user.displayName, 'PUT');
         const destination = location?.state?.from || '/';
         navigate(destination);
       })
@@ -86,7 +85,6 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
- 
 
   // password reset email
   const passwordReset = (email) => {
@@ -122,8 +120,28 @@ const useFirebase = () => {
     return () => unsubscibed;
   }, [auth]);
 
+  // see whether admin or not
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
+
+  // save user to the database
+  const saveUser = (email, name, method) => {
+    const user = { email, name };
+    fetch('http://localhost:5000/users', {
+      method: method,
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    }).then();
+  };
+
   return {
     user,
+    admin,
     setUser,
     error,
     createNewUser,
