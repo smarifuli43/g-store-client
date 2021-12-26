@@ -7,10 +7,10 @@ Features:
 * Google authentication
 * Email and password authentication
 * Password reset functionality
-* User can add prodcut to the cart
-* User can update cart or delete the added product 
-* User can order a product when they logged in
-* User can cancel the order
+* Users can add prodcuts to the cart
+* Users can update the cart or delete the added product 
+* Users can order a product when they logged in
+* Users can cancel the order
 * Admin can make another user to admin
 * Admin can add product
 * Admin can update the status of the order
