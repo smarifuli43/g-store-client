@@ -1,5 +1,8 @@
 # Project name: G-store
 
+Website Link: https://g-store-i43.web.app/
+Or : https://g-store-i43.firebaseapp.com/
+
 Features:
 * Google authentication
 * Email and password authentication
