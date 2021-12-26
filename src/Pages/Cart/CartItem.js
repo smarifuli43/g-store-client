@@ -27,14 +27,14 @@ const CartItem = ({ item, qtyChangeHandler, removeCartHanler }) => {
         </div>
         <Link to={`/products/${111}`}></Link>
         <div className='d-flex align-items-center'>
-          <button className='update me-3' onClick={() => setQuantity(decrease)}>
+          <button className='update me-2' onClick={() => setQuantity(decrease)}>
             <i className='fas fa-minus'></i>
           </button>
           <span className='fs-3'>{item.qty}</span>
-          <button className='update ms-3' onClick={() => setQuantity(increase)}>
+          <button className='update ms-2' onClick={() => setQuantity(increase)}>
             <i className='fas fa-plus '></i>
           </button>
-          <h4 className='ms-5'> ${item.price * item.qty}</h4>
+          <h4 className='ms-3'> ${item.price * item.qty}</h4>
 
           <button
             className='border-0 bg-transparent ms-3'

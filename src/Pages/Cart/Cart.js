@@ -5,6 +5,7 @@ import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../../redux/actions/cartAction';
+import Footer from '../Shared/Footer/Footer';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -17,6 +18,7 @@ const Cart = () => {
   const removeCartHanler = (id) => {
     dispatch(removeFromCart(id));
   };
+
   const getCartTotal = () => {
     return cartItems.reduce((price, item) => item.price * item.qty + price, 0);
   };
@@ -54,13 +56,17 @@ const Cart = () => {
               <p>Total: {getCartCount()} items</p>
               <h6>Price: ${getCartTotal()}</h6>
               <hr />
-              <Link to='/' className='btn-store px-0 d-block text-center'>
+              <Link
+                to={`/product/checkout`}
+                className='btn-store px-0 d-block text-center'
+              >
                 Proced to checkout
               </Link>
             </div>
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

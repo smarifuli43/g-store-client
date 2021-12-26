@@ -9,7 +9,6 @@ import useAuth from '../../../Hooks/useAuth';
 const Dashboard = () => {
   const [menustate, setMenuState] = useState(false);
   const { user, logout, admin } = useAuth();
-  console.log(admin);
   const navigate = useNavigate();
   const signOut = () => {
     logout(navigate);
@@ -67,7 +66,7 @@ const Dashboard = () => {
             {!admin && (
               <>
                 <NavLink
-                  to='/dashboard/booking'
+                  to='/dashboard/myorders'
                   className={({ isActive }) =>
                     isActive ? 'active-dash mt-3' : 'mt-3 text-secondary'
                   }
@@ -75,7 +74,7 @@ const Dashboard = () => {
                   <span>
                     <i className='fas fa-shopping-basket me-2 f'></i>
                   </span>
-                  Booking List
+                  My order
                 </NavLink>
                 <NavLink
                   to='/dashboard/review'
@@ -131,7 +130,7 @@ const Dashboard = () => {
                   Make Admin
                 </NavLink>
                 <NavLink
-                  to='/dashboard/manageservice'
+                  to='/dashboard/manageorders'
                   className={({ isActive }) =>
                     isActive ? 'active-dash mt-3' : 'mt-3  text-secondary'
                   }

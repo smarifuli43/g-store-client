@@ -12,6 +12,7 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
       price: data.price,
       countStock: data.countStock,
       category: data.category,
+      status:'pending',
       qty,
     },
   });
@@ -24,4 +25,10 @@ export const removeFromCart = (id) => (dispatch, getState) => {
     payload:id
   })
    localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
+}
+export const reseteCart = () => (dispatch,) => {
+  dispatch({
+    type: actionTypes.CART_RESET,
+  });
+  localStorage.removeItem('cart')
 }

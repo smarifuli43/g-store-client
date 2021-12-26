@@ -13,6 +13,9 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
 import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
 import Cart from './Pages/Cart/Cart';
+import Checkout from './Pages/Checkout/Checkout';
+import MyOrders from './Pages/Dashboard/User/MyOrders/MyOrders';
+import ManageOrders from './Pages/Dashboard/Admin/ManageOrders/ManageOrders';
 
 function App() {
   return (
@@ -23,12 +26,20 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='home' element={<Home />} />
             <Route path='login' element={<Login />} />
-            <Route path='cart' element={<Cart/>} />
+            <Route path='cart' element={<Cart />} />
             <Route path='register' element={<Register />} />
+
+            <Route path='products/:id' element={<ProductDetails />} />
             <Route
-              path='products/:id'
-              element={<ProductDetails />}
-            />
+              path='product/checkout'
+              element={
+                <PrivateRoute>
+                 <Checkout/>
+                </PrivateRoute>
+              }
+            >
+            
+            </Route>
             <Route
               path='dashboard'
               element={
@@ -40,6 +51,8 @@ function App() {
               <Route path={'/dashboard'} element={<DashboardHome />}></Route>
               <Route path='makeadmin' element={<MakeAdmin />}></Route>
               <Route path='addproduct' element={<AddProduct />}></Route>
+              <Route path='manageorders' element={<ManageOrders/>}></Route>
+              <Route path='myorders' element={<MyOrders/>}></Route>
             </Route>
             <Route path='*' element={<NotFound />} />
           </Routes>

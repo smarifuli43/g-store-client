@@ -10,7 +10,7 @@ const AddService = () => {
   const { register, handleSubmit, reset } = useForm();
   const [success, setSuccess] = useState();
   const onSubmit = (data) => {
-    console.log(data)
+    
     fetch('http://localhost:5000/products', {
       method: 'POST',
       headers: {
