@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../Shared/Header/Header';
 import { useForm } from 'react-hook-form';
 import './Register.css';
@@ -10,6 +10,8 @@ import { Alert } from 'react-bootstrap';
 
 const Register = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const {
     createNewUser,
     signInWithGoogle,
@@ -49,7 +51,8 @@ const Register = () => {
   };
 
   const googleSignIn = () => {
-    signInWithGoogle();
+        signInWithGoogle(navigate, location);
+
   };
 
   return (
