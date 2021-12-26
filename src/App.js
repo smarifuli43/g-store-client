@@ -12,6 +12,7 @@ import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin/MakeAdmin';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
 import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
+import Cart from './Pages/Cart/Cart';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='home' element={<Home />} />
             <Route path='login' element={<Login />} />
+            <Route path='cart' element={<Cart/>} />
             <Route path='register' element={<Register />} />
             <Route
               path='products/:id'

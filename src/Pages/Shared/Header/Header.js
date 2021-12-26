@@ -4,10 +4,16 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../img/logo.png';
 import './Header.css';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+  const getCartCount = () => {
+    return cartItems.reduce((qty, item) => qty + Number(item.qty), 0);
+  };
 
   return (
     <div>
@@ -22,12 +28,16 @@ const Header = () => {
               />
             </Link>
           </Navbar.Brand>
-          <button className='ms-auto ms-lg-5 border-0 bg-transparent position-relative me-4'>
+          <Link
+            to='/cart'
+            className='ms-auto ms-lg-5 border-0 bg-transparent position-relative me-4'
+          >
             <i className='fas fa-shopping-cart fs-3'></i>{' '}
             <span className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'>
-              9 <span className='visually-hidden'>cart item</span>
+              {getCartCount()}{' '}
+              <span className='visually-hidden'>cart item</span>
             </span>
-          </button>
+          </Link>
           <Navbar.Toggle
             aria-controls='responsive-navbar-nav'
             className='border-0 ms-auto'

@@ -1,0 +1,10 @@
+.update{
+  background-color: rgb(237, 250, 238);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+}
