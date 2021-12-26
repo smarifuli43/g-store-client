@@ -93,7 +93,7 @@ const Dashboard = () => {
 
             {admin && (
               <>
-                <NavLink
+                {/* <NavLink
                   to='/dashboard/orders'
                   className={({ isActive }) =>
                     isActive ? 'active-dash mt-3' : 'mt-3  text-secondary'
@@ -104,7 +104,7 @@ const Dashboard = () => {
                     <i className='fas fa-tasks me-2'></i>
                   </span>
                   Order list
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   to='/dashboard/addproduct'
                   className={({ isActive }) =>

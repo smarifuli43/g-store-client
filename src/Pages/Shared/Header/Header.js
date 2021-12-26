@@ -55,21 +55,21 @@ const Header = () => {
               </NavLink>
 
               <NavLink
-                to='/about'
+                to='/shop'
                 className={({ isActive }) =>
                   isActive ? 'active' : 'ms-lg-4 mt-4 mt-lg-0 '
                 }
               >
-                About
+                Shop
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to='/contact'
                 className={({ isActive }) =>
                   isActive ? 'active' : 'ms-lg-4 mt-4 mt-lg-0 '
                 }
               >
                 Contact
-              </NavLink>
+              </NavLink> */}
 
               {
                 <NavLink

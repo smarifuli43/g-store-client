@@ -16,6 +16,7 @@ import Cart from './Pages/Cart/Cart';
 import Checkout from './Pages/Checkout/Checkout';
 import MyOrders from './Pages/Dashboard/User/MyOrders/MyOrders';
 import ManageOrders from './Pages/Dashboard/Admin/ManageOrders/ManageOrders';
+import Shop from './Pages/Shop/Shop';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='home' element={<Home />} />
+            <Route path='shop' element={<Shop/>} />
             <Route path='login' element={<Login />} />
             <Route path='cart' element={<Cart />} />
             <Route path='register' element={<Register />} />

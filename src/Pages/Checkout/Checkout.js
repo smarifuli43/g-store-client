@@ -46,7 +46,7 @@ const Checkout = () => {
           }, 5000);
         }
       });
-    // cartReset();
+    cartReset();
   };
 
   return (
