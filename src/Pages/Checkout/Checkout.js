@@ -29,7 +29,7 @@ const Checkout = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     const order = { ...data, status: 'pending', order: [...cartItems] };
-    fetch('http://localhost:5000/orders', {
+    fetch('https://rocky-shore-10312.herokuapp.com/orders', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

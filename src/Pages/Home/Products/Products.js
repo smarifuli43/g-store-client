@@ -14,7 +14,7 @@ const Products = () => {
   }, [dispatch]);
   const { products, loading, error } = getProducts;
   // useEffect(() => {
-  //   fetch('http://localhost:5000/products')
+  //   fetch('https://rocky-shore-10312.herokuapp.com/products')
   //     .then((res) => res.json())
   //     .then((data) => setProducts(data));
   // }, []);

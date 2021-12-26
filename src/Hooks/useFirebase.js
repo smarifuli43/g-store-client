@@ -85,7 +85,6 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
-
   // password reset email
   const passwordReset = (email) => {
     sendPasswordResetEmail(auth, email)
@@ -122,7 +121,7 @@ const useFirebase = () => {
 
   // see whether admin or not
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://rocky-shore-10312.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -130,7 +129,7 @@ const useFirebase = () => {
   // save user to the database
   const saveUser = (email, name, method) => {
     const user = { email, name };
-    fetch('http://localhost:5000/users', {
+    fetch('https://rocky-shore-10312.herokuapp.com/users', {
       method: method,
       headers: {
         'content-type': 'application/json',

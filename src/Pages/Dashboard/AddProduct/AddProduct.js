@@ -10,8 +10,7 @@ const AddService = () => {
   const { register, handleSubmit, reset } = useForm();
   const [success, setSuccess] = useState();
   const onSubmit = (data) => {
-    
-    fetch('http://localhost:5000/products', {
+    fetch('https://rocky-shore-10312.herokuapp.com/products', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -39,7 +38,7 @@ const AddService = () => {
             <div className='col-12 d-md-flex'>
               <div className='w-100 '>
                 <label htmlFor='name' className='mb-2'>
-                 Product Title
+                  Product Title
                 </label>
                 <input
                   required
@@ -70,13 +69,21 @@ const AddService = () => {
                 <label htmlFor='category' className='mb-2'>
                   Category
                 </label>
-                <input required placeholder='Category name' {...register('category')} />
+                <input
+                  required
+                  placeholder='Category name'
+                  {...register('category')}
+                />
               </div>
               <div className='w-100 '>
                 <label htmlFor='image' className='mb-2'>
-                 Stock quantity
+                  Stock quantity
                 </label>
-                <input required placeholder='Product quantity' {...register('countStock')} />
+                <input
+                  required
+                  placeholder='Product quantity'
+                  {...register('countStock')}
+                />
               </div>
 
               <div className='w-100 '>

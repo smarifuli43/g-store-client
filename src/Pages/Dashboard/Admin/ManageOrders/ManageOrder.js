@@ -8,7 +8,7 @@ const ManageOrder = ({ order, quantity }) => {
     console.log(id);
     const proceed = window.confirm('Are you sure you want to delete?');
     if (proceed === true) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://rocky-shore-10312.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: 'DELETE',
       })
@@ -25,7 +25,7 @@ const ManageOrder = ({ order, quantity }) => {
     }
   };
   const updateStatus = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://rocky-shore-10312.herokuapp.com/orders/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -46,7 +46,7 @@ const ManageOrder = ({ order, quantity }) => {
           <div className='d-flex justify-content-between align-items-center mb-3'>
             <h5 className='mb-3 '>Order: {quantity + 1}</h5>
 
-            <p>status: {status}</p>
+            <p>{status}</p>
             <div className=''>
               <button
                 className='border-0 bg-transparent ms-3'
@@ -71,7 +71,6 @@ const ManageOrder = ({ order, quantity }) => {
                 <th>Name</th>
                 <th>Quantity</th>
                 <th>Price</th>
-               
               </tr>
             </thead>
             <tbody>
@@ -81,7 +80,6 @@ const ManageOrder = ({ order, quantity }) => {
                   <td>{order.name}</td>
                   <td>{order.qty}</td>
                   <td>${order.price}</td>
-              
                 </tr>
               ))}
             </tbody>

@@ -18,7 +18,6 @@ const ProductDetails = () => {
   const ProductDetails = useSelector((state) => state.getProductDetails);
 
   const { product, loading, error } = ProductDetails;
- 
 
   useEffect(() => {
     if (product && id !== product._id) {
@@ -26,7 +25,7 @@ const ProductDetails = () => {
     }
   }, [id, dispatch, product]);
   //   useEffect(() => {
-  //     fetch(`http://localhost:5000/products/${id}`)
+  //     fetch(`https://rocky-shore-10312.herokuapp.com/products/${id}`)
   //       .then((res) => res.json())
   //       .then((data) => setProduct(data));
   //   }, [id]);
@@ -143,7 +142,7 @@ const ProductDetails = () => {
           )}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

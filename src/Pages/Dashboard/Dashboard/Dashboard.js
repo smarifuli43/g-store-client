@@ -25,10 +25,10 @@ const Dashboard = () => {
           <div className='line3'></div>
         </button>
         <Link to='/home'>
-          <img src={logo} alt='' style={{ width: '130px', height: '50px' }} />
+          <img src={logo} alt='' style={{ width: '110px', height: '40px' }} />
         </Link>
 
-        {user.displayName && <h5>{user.displayName}</h5>}
+        {user.displayName && <h6>{user.displayName}</h6>}
       </div>
       <div className='wrapper'>
         <div
