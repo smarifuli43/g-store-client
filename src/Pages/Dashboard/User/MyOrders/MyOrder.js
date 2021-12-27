@@ -1,33 +1,11 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import {  Table } from 'react-bootstrap';
 
-const MyOrder = ({ order, quantity }) => {
-  // const [orders, setOrders]=useState(order?.order)
-
-  const removeOrderHandler = (id) => {
-    console.log(id);
-    const proceed = window.confirm('Are you sure you want to delete?');
-    if (proceed === true) {
-      const url = `https://rocky-shore-10312.herokuapp.com/orders/${id}`;
-      fetch(url, {
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount) {
-            console.log('deleted successfully');
-            alert('deleted successfully');
-            //  const remaining = orders.filter((order) => order._id !== id);
-            //  setOrders(remaining);
-            window.location.reload();
-          }
-        });
-    }
-  };
-
+const MyOrder = ({ order, quantity, removeOrderHandler }) => {
   return (
     <div className='row  d-flex justify-content-center mt-5'>
       <div className='col-12 col-md-10 col-lg-9 '>
+       
         <div className='add-product box-shadow bg-white p-4 '>
           <div className='d-flex justify-content-between align-items-center mb-3'>
             <p className='mb-3 '>Order: {quantity + 1}</p>
