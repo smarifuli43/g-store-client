@@ -3,20 +3,7 @@ import { Link } from 'react-router-dom';
 import './Cartitem.css'
 
 const CartItem = ({ item, qtyChangeHandler, removeCartHanler }) => {
-  let [quantity, setQuantity] = useState(1);
-  const increase = () => {
-    setQuantity(quantity++);
-    qtyChangeHandler(item.product, quantity);
-  };
-  const decrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity--);
-      qtyChangeHandler(item.product, quantity);
-    } else {
-      setQuantity(1);
-      qtyChangeHandler(item.product, quantity);
-    }
-  };
+
 
   return (
     <div className='mb-3'>
@@ -27,11 +14,11 @@ const CartItem = ({ item, qtyChangeHandler, removeCartHanler }) => {
         </div>
         <Link to={`/products/${111}`}></Link>
         <div className='d-flex align-items-center'>
-          <button className='update me-2' onClick={() => setQuantity(decrease)}>
+          <button className='update me-2' onClick={() => qtyChangeHandler(item.product, item.qty-1)}>
             <i className='fas fa-minus'></i>
           </button>
           <span className='fs-3'>{item.qty}</span>
-          <button className='update ms-2' onClick={() => setQuantity(increase)}>
+          <button className='update ms-2' onClick={() => qtyChangeHandler(item.product, item.qty+1)}>
             <i className='fas fa-plus '></i>
           </button>
           <h4 className='ms-3'> ${item.price * item.qty}</h4>
