@@ -49,7 +49,7 @@ const Dashboard = () => {
           <div className='d-flex flex-column px-2 position-relative'>
             <CloseButton
               onClick={() => setMenuState(false)}
-              className=' position-absolute top-0 end-0 m-3 p-2  close-btn'
+              className=' position-absolute top-0 end-0 m-3 p-2 bg-white close-btn'
             />
             <Link to='/home' className='mt-5 text-secondary'>
               <span>
